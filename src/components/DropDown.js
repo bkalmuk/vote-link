@@ -9,7 +9,7 @@ const DropDown = () => {
       key="left"
       id={`dropdown-order`}
       drop="left"
-      variant="secondary"
+      variant="primary"
       title="Order by"
     >
       <Dropdown.Item eventKey="most">Most voted (Z - A)</Dropdown.Item>
