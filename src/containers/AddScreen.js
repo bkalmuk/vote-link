@@ -2,13 +2,13 @@ import React from 'react';
 import '../App.scss';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/NavBar';
-import { Container, Form, Button,Row, Col } from 'react-bootstrap';
+import { Container, Form, Button } from 'react-bootstrap';
 class ListScreen extends React.Component {
   render() {
     return (
       <>
         <Navbar />
-        <Container style={{ marginTop: 30 }}>
+        <Container>
           <div className="menu">
             <Link to="/" className="btn btn-dark btn-submit">BACK TO LIST</Link>
           </div>

@@ -4,17 +4,18 @@ import '../App.scss';
 import { Row, Col, ButtonGroup, Button } from 'react-bootstrap';
 
 const ListItem = props => {
+  const data = props.data;
   return (
     <Row className="list-item">
       <Col xs="2" className="list-item-point">
         <div>
-        <span>6</span>
-        <span>POINTS</span>
+          <span>{data.vote}</span>
+          <span>POINTS</span>
         </div>
       </Col>
       <Col xs="6" className="list-item-content">
-        <span>Hacker News</span>
-        <span>wwww.hackernews.com</span>
+        <span>{data.name}</span>
+        <span>{data.url}</span>
       </Col>
       <Col xs="4" className="list-item-button">
       <ButtonGroup aria-label="vote">

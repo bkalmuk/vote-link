@@ -5,7 +5,7 @@ import { Navbar } from 'react-bootstrap';
 
 const NavBar = () => {
     return (
-        <Navbar bg="dark" variant="dark">
+        <Navbar bg="dark" variant="dark" style={{ marginBottom: 30 }}>
             <Navbar.Brand href="#home">
                 {/* <img
                     alt="brand logo"
