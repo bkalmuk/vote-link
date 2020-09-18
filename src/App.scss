@@ -1,6 +1,3 @@
-@import './theme/colors.scss';
-@import './theme/dimens.scss';
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,41 +7,69 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+.list {
+  padding: 0 15px;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  .list-item {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  
+    .list-item-point {
+      text-align: center;
+      padding: 5px;
+      border-radius: 5px;
+      
+      div {
+        padding: 10px;
+        background-color: rgb(243, 242, 241);
+        span {
+          display: block;
+        }
+        :nth-child(1) {
+          font-size: 2.2em;
+          line-height: normal;
+        }
+        :nth-child(2) {
+          font-size: 0.6em;
+        }
+      }
+    }
+    
+    .list-item-content {
+      span {
+        display: block;
+      }
+      :nth-child(1) {
+        font-weight: bold;
+        font-size: 1.3em;
+      }
+      :nth-child(2) {
+        color: gray;
+      }
+    }
+  
+    .list-item-button {
+      text-align: right;
+  
+      .btn-group {
+        width: 100%;
+        button {
+          width: 50%;
+        }
+      }
+    }
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+.menu {
+  margin-bottom: 20px;
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+  .dropleft {
+    float: right;
   }
 }
+
