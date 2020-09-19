@@ -7,7 +7,7 @@ import { Container, Form, Button } from 'react-bootstrap';
 import AlertBasic from '../components/AlertBasic';
 
 function ListScreen () {
-  const { addLink } = useContext(LinkContext);
+  const { dispatch } = useContext(LinkContext);
 
   const [name, setName] = useState('');
   const [url, setUrl] = useState('');
@@ -16,7 +16,7 @@ function ListScreen () {
   const handleSubmit = (e) => {
     if (name !== '' && url !== '') {
       e.preventDefault();
-      addLink(name, url);
+      dispatch({ type: 'ADD_LINK', link: { name, url } });
       setName('');
       setUrl('');
       setAlertShow({show: true, type:"success", text: "Link successfully added!"});

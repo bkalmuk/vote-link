@@ -32,7 +32,7 @@ const PaginationBasic = props => {
 }
 
 function ListScreen() {
-  const { linkList, removeLink } = useContext(LinkContext);
+  const { linkList, dispatch } = useContext(LinkContext);
 
   const [activePagination, setActivePagination] = useState(1);
   // Filtering is for showing only 5 items in the page by the pagination changes
@@ -50,7 +50,7 @@ function ListScreen() {
   }
 
   function removeAndCloseModal() {
-    removeLink(itemToRemove.id);
+    dispatch({ type: 'REMOVE_LINK', id: itemToRemove.id });
     setModalShow(false);
     setAlertShow(true);
     setAlertShow(true);
@@ -69,7 +69,13 @@ function ListScreen() {
         </div>
 
         <div className="list">
-          {linkListFiltered.map((link) => <ListItem key={link.id} data={link} removeItem={() => handleRemove(link)} /> )}
+          {linkList.length > 0 ? (linkListFiltered.map((link) => <ListItem 
+            key={link.id}
+            data={link}
+            removeItem={() => handleRemove(link)}
+            upVote={() => dispatch({ type: 'UP_VOTE', id: link.id })}
+            downVote={() => dispatch({ type: 'DOWN_VOTE', id: link.id })} />
+          )) : <h4 style={{ textAlign: 'center' }}> There is no link to show yet</h4>}
         </div>
 
         <PaginationBasic active={activePagination} listLength={linkList.length} setActive={setActivePagination}/>
