@@ -6,6 +6,8 @@ import { Container, Pagination } from 'react-bootstrap';
 import NavBar from '../components/NavBar';
 import DropDown from '../components/DropDown';
 import ListItem from '../components/ListItem';
+import ModalBasic from '../components/ModalBasic';
+import AlertBasic from '../components/AlertBasic';
 
 // HOC
 const PaginationBasic = props => {
@@ -37,17 +39,37 @@ function ListScreen() {
   let linkListFiltered = linkList.filter((e,i) => i >= (activePagination - 1) * 5);
   linkListFiltered = linkListFiltered.filter((e,i) => i < 5);
 
+  // Remove Item Handling
+  const [itemToRemove, setItemToRemove] = useState({});
+  const [modalShow, setModalShow] = useState(false);
+  const [alertShow, setAlertShow] = useState(false);
+
+  function handleRemove(link) {
+    setItemToRemove(link);
+    setModalShow(true);
+  }
+
+  function removeAndCloseModal() {
+    removeLink(itemToRemove.id);
+    setModalShow(false);
+    setAlertShow(true);
+    setAlertShow(true);
+    setTimeout(function () { setAlertShow(false); }, 3000);
+  }
+
   return (
     <>
       <NavBar />
+      <ModalBasic show={modalShow} link={itemToRemove.name} positiveFunc={removeAndCloseModal} closeModal={() => setModalShow(false)} />
       <Container>
+        <AlertBasic show={alertShow} type="success" text="Link successfully removed!" onClose={() => setAlertShow(false)} />
         <div className="menu">
           <Link to="/add" className="btn btn-dark btn-submit">SUBMIT A LINK</Link>
           <DropDown />
         </div>
 
         <div className="list">
-          {linkListFiltered.map((link) => <ListItem key={link.id} data={link} removeItem={() => removeLink(link.id)} /> )}
+          {linkListFiltered.map((link) => <ListItem key={link.id} data={link} removeItem={() => handleRemove(link)} /> )}
         </div>
 
         <PaginationBasic active={activePagination} listLength={linkList.length} setActive={setActivePagination}/>
