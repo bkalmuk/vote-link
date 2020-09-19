@@ -14,11 +14,11 @@ export const linkReducer = (state, action) => {
     case 'UP_VOTE':
       const itemIndexUp = state.findIndex(link => link.id === action.id);
       state[itemIndexUp].vote = state[itemIndexUp].vote + 1;
-      return state
+      return [...state]
     case 'DOWN_VOTE':
       const itemIndexDown = state.findIndex(link => link.id === action.id);
-      state[itemIndexDown].vote = state[itemIndexDown].vote + 1;
-      return state
+      state[itemIndexDown].vote = state[itemIndexDown].vote - 1;
+      return [...state]
     default:
       return state
   }

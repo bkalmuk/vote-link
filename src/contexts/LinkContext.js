@@ -14,7 +14,7 @@ const LinkContextProvider = (props) => {
   }, [linkList]);
 
   return (
-    <LinkContext.Provider value={{linkList, dispatch }}>
+    <LinkContext.Provider value={{ linkList, dispatch }}>
       { props.children }
     </LinkContext.Provider> 
   );
