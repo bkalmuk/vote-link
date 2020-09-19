@@ -9,6 +9,8 @@ import ListItem from '../components/ListItem';
 import ModalBasic from '../components/ModalBasic';
 import AlertBasic from '../components/AlertBasic';
 import { orderByDate, orderByVote } from '../utils/order';
+import moment from 'moment';
+
 // HOC
 const PaginationBasic = props => {
   const { listLength, active, setActive } = props;
@@ -79,8 +81,8 @@ function ListScreen() {
             key={link.id}
             data={link}
             removeItem={() => handleRemove(link)}
-            upVote={() => dispatch({ type: 'UP_VOTE', id: link.id })}
-            downVote={() => dispatch({ type: 'DOWN_VOTE', id: link.id })} />
+            upVote={() => dispatch({ type: 'UP_VOTE', id: link.id, lastVoteDate: moment().format('YYYY-MM-DD HH:mm:ss)') })}
+            downVote={() => dispatch({ type: 'DOWN_VOTE', id: link.id, lastVoteDate: moment().format('YYYY-MM-DD HH:mm:ss)') })} />
           )) : <h4 style={{ textAlign: 'center' }}> There is no link to show yet</h4>}
         </div>
 
