@@ -5,6 +5,7 @@ import { Row, Col, ButtonGroup, Button } from 'react-bootstrap';
 
 const ListItem = props => {
   const data = props.data;
+
   return (
     <Row className="list-item">
       <Col xs="2" className="list-item-point">
@@ -18,10 +19,11 @@ const ListItem = props => {
         <span>{data.url}</span>
       </Col>
       <Col xs="4" className="list-item-button">
-      <ButtonGroup aria-label="vote">
-        <Button variant="danger" >Down Vote</Button>
-        <Button variant="success" >Up Vote</Button>
-      </ButtonGroup>
+        <ButtonGroup aria-label="vote">
+          <Button variant="warning" >Down Vote</Button>
+          <Button variant="success" >Up Vote</Button>
+        </ButtonGroup>
+        <Button variant="danger" className="list-item-remove-button">X</Button>
       </Col>
     </Row>
   );

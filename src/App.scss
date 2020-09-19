@@ -17,6 +17,7 @@ body {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
+    transition-duration: 0.8s;
   
     .list-item-point {
       text-align: center;
@@ -26,6 +27,8 @@ body {
       div {
         padding: 10px;
         background-color: rgb(243, 242, 241);
+        transition-duration: 0.8s;
+
         span {
           display: block;
         }
@@ -60,6 +63,31 @@ body {
         button {
           width: 50%;
         }
+      }
+
+      .list-item-remove-button {
+        position: absolute;
+        z-index: 2;
+        right: -20px;
+        top: -40px;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 600ms, visibility 600ms;
+        width: 40px;
+        height: 40px;
+        border-radius: 30px;
+      }
+    }
+
+    &:hover {
+      background-color: rgb(243, 242, 241);
+
+      .list-item-point div{
+        background-color:rgb(214, 213, 212);
+      }
+      .list-item-button .list-item-remove-button {
+        visibility: visible;
+        opacity: 1;
       }
     }
   }
