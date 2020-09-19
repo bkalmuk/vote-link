@@ -35,3 +35,10 @@ Node-sass allows .scss files to be compiled to css fastly and automatically via 
 React-Bootstrap replaces the Bootstrap JavaScript. Each component has been built from scratch as a true React component, without unneeded dependencies like jQuery.
 
 #### [`uuid`](https://www.npmjs.com/package/uuid)
+
+#### [`moment`](https://momentjs.com/) 
+
+Moment is a library used for parsing and formatting dates. It's used for formatting the timstamp values in the app.
+
+Also, [`sass`](https://sass-lang.com/) has been used for the styling of the app. Sass is a CSS preprocessor, where you can define variables, use functions, make control statements and iterations within a stylesheet.
+

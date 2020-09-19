@@ -8,7 +8,7 @@ import DropDown from '../components/DropDown';
 import ListItem from '../components/ListItem';
 import ModalBasic from '../components/ModalBasic';
 import AlertBasic from '../components/AlertBasic';
-
+import { orderByDate, orderByVote } from '../utils/order';
 // HOC
 const PaginationBasic = props => {
   const { listLength, active, setActive } = props;
@@ -35,8 +35,14 @@ function ListScreen() {
   const { linkList, dispatch } = useContext(LinkContext);
 
   const [activePagination, setActivePagination] = useState(1);
+  const [order, setOrder] = useState('');
+  
+  // Ordering List
+  let list = orderByDate(linkList); // Last added on top
+  if (order !== '') list = orderByVote(list, order); // If it is choosen by dropdown (Most Voted/Less Voted)
+
   // Filtering is for showing only 5 items in the page by the pagination changes
-  let linkListFiltered = linkList.filter((e,i) => i >= (activePagination - 1) * 5);
+  let linkListFiltered = list.filter((e,i) => i >= (activePagination - 1) * 5);
   linkListFiltered = linkListFiltered.filter((e,i) => i < 5);
 
   // Remove Item Handling
@@ -65,7 +71,7 @@ function ListScreen() {
         <AlertBasic show={alertShow} type="success" text="Link successfully removed!" onClose={() => setAlertShow(false)} />
         <div className="menu">
           <Link to="/add" className="btn btn-dark btn-submit">SUBMIT A LINK</Link>
-          <DropDown />
+          <DropDown onClickMost={() => setOrder('most')} onClickLess={() => setOrder('less')} />
         </div>
 
         <div className="list">

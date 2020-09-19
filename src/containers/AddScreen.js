@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import Navbar from '../components/NavBar';
 import { Container, Form, Button } from 'react-bootstrap';
 import AlertBasic from '../components/AlertBasic';
+import moment from 'moment';
 
 function ListScreen () {
   const { dispatch } = useContext(LinkContext);
@@ -16,7 +17,7 @@ function ListScreen () {
   const handleSubmit = (e) => {
     if (name !== '' && url !== '') {
       e.preventDefault();
-      dispatch({ type: 'ADD_LINK', link: { name, url } });
+      dispatch({ type: 'ADD_LINK', link: { name, url, date: moment().format('YYYY-MM-DD HH:mm:ss') }});
       setName('');
       setUrl('');
       setAlertShow({show: true, type:"success", text: "Link successfully added!"});

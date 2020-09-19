@@ -4,6 +4,7 @@ export const linkReducer = (state, action) => {
   switch (action.type) {
     case 'ADD_LINK':
       return [...state, {
+        date: action.link.date,
         id: uuidv4(),
         name: action.link.name,
         url: action.link.url,
