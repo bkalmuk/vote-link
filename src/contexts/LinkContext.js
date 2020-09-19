@@ -1,10 +1,17 @@
-import React, { createContext, useReducer } from 'react';
+import React, { createContext, useReducer, useEffect } from 'react';
 import { linkReducer } from '../reducers/linkReducer';
 
 export const LinkContext = createContext();
 
 const LinkContextProvider = (props) => {
-  const [linkList, dispatch] = useReducer(linkReducer, []);
+  const [linkList, dispatch] = useReducer(linkReducer, [], () => {
+    const localData = localStorage.getItem('linkList');
+    return localData ? JSON.parse(localData) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem('linkList', JSON.stringify(linkList));
+  }, [linkList]);
 
   return (
     <LinkContext.Provider value={{linkList, dispatch }}>
