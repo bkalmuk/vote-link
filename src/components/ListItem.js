@@ -18,12 +18,12 @@ const ListItem = props => {
         <span>{data.name}</span>
         <span>{data.url}</span>
       </Col>
-      <Col xs="4" className="list-item-button">
+      <Col xs="4" className="list-item-buttons">
         <ButtonGroup aria-label="vote">
           <Button variant="warning" >Down Vote</Button>
           <Button variant="success" >Up Vote</Button>
         </ButtonGroup>
-        <Button variant="danger" className="list-item-remove-button">X</Button>
+        <Button variant="danger" className="list-item-remove-button" onClick={props.removeItem}>X</Button>
       </Col>
     </Row>
   );
@@ -33,4 +33,5 @@ export default ListItem;
 
 ListItem.propTypes = {
   data: PropTypes.object,
+  removeItem: PropTypes.func,
 };

@@ -55,7 +55,7 @@ body {
       }
     }
   
-    .list-item-button {
+    .list-item-buttons {
       text-align: right;
   
       .btn-group {
@@ -85,7 +85,8 @@ body {
       .list-item-point div{
         background-color:rgb(214, 213, 212);
       }
-      .list-item-button .list-item-remove-button {
+      
+      .list-item-buttons .list-item-remove-button {
         visibility: visible;
         opacity: 1;
       }
