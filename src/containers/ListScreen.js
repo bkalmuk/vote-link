@@ -30,7 +30,7 @@ const PaginationBasic = props => {
 }
 
 function ListScreen() {
-  const {linkList} = useContext(LinkContext);
+  const { linkList } = useContext(LinkContext);
 
   const [activePagination, setActivePagination] = useState(1);
   // Filtering is for showing only 5 items in the page by the pagination changes
