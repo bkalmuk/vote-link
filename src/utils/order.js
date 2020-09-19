@@ -4,12 +4,14 @@ export function orderByDate(list) {
   return list.sort((a, b) => (a.date < b.date) ? 1 : -1);
 }
 
+
 export function orderByVote(list, type) {
-  if (type === 'most') {
+  if ( type === 'most') {
     // Most voted is on top
-    return list.sort((a, b) => (a.vote < b.vote) ? 1 : -1);
-  } else if (type === 'less') {
+    return list.sort((a, b) => (a.vote < b.vote) ? 1 : (a.vote === b.vote) ? ((a.date < b.date) ? 1 : -1) : -1 );
+  } else {
     // Less voted is on top
-    return list.sort((a, b) => (a.vote > b.vote) ? 1 : -1);
-  } else return list;
+    return list.sort((a, b) => (a.vote > b.vote) ? 1 : (a.vote === b.vote) ? ((a.date < b.date) ? 1 : -1) : -1 );
+  }
 }
+
