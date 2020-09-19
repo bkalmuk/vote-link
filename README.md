@@ -16,7 +16,8 @@ Directory of the project overall look like following:
 
 src<br>
 |--components<br>
-|--pages<br>
+|--containers<br>
+|--contexts<br>
 
 
 ## Libraries used in the app
@@ -32,3 +33,5 @@ Node-sass allows .scss files to be compiled to css fastly and automatically via 
 #### [`react-bootstrap`](https://react-bootstrap.github.io/)
 
 React-Bootstrap replaces the Bootstrap JavaScript. Each component has been built from scratch as a true React component, without unneeded dependencies like jQuery.
+
+#### [`uuid`](https://www.npmjs.com/package/uuid)

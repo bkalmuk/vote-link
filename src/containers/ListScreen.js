@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { LinkContext } from '../contexts/LinkContext';
 import '../App.scss';
 import { Link } from 'react-router-dom';
 import { Container, Pagination } from 'react-bootstrap';
@@ -6,69 +7,7 @@ import NavBar from '../components/NavBar';
 import DropDown from '../components/DropDown';
 import ListItem from '../components/ListItem';
 
-const linkList = [
-  {
-    name: 'hacker rank',
-    url: 'https://hackerrank.com/',
-    vote: 1
-  },
-  {
-    name: 'hacker rank',
-    url: 'https://hackerrank.com/',
-    vote: 2
-  },
-  {
-    name: 'hacker rank',
-    url: 'https://hackerrank.com/',
-    vote: 3
-  },
-  {
-    name: 'hacker rank',
-    url: 'https://hackerrank.com/',
-    vote: 4
-  },
-  {
-    name: 'hacker rank',
-    url: 'https://hackerrank.com/',
-    vote: 5
-  },
-  {
-    name: 'hacker rank',
-    url: 'https://hackerrank.com/',
-    vote: 6
-  },
-  {
-    name: 'hacker rank',
-    url: 'https://hackerrank.com/',
-    vote: 7
-  },
-  {
-    name: 'hacker rank',
-    url: 'https://hackerrank.com/',
-    vote: 8
-  },
-  {
-    name: 'hacker rank',
-    url: 'https://hackerrank.com/',
-    vote: 9
-  },
-  {
-    name: 'hacker rank',
-    url: 'https://hackerrank.com/',
-    vote: 10
-  },
-  {
-    name: 'hacker rank',
-    url: 'https://hackerrank.com/',
-    vote: 11
-  },
-  {
-    name: 'hacker rank',
-    url: 'https://hackerrank.com/',
-    vote: 12
-  },
-];
-
+// HOC
 const PaginationBasic = props => {
   const { listLength, active, setActive } = props;
   let items = [];
@@ -91,14 +30,13 @@ const PaginationBasic = props => {
 }
 
 function ListScreen() {
-  const [activePagination, setActivePagination] = useState(1);
-  console.log(linkList);
-  let linkListFiltered = linkList.filter((e,i) => i >= (activePagination - 1) * 5);
-  console.log(linkListFiltered);
-  linkListFiltered = linkListFiltered.filter((e,i) => i < 5);
-  console.log(linkListFiltered);
+  const {linkList} = useContext(LinkContext);
 
-  
+  const [activePagination, setActivePagination] = useState(1);
+  // Filtering is for showing only 5 items in the page by the pagination changes
+  let linkListFiltered = linkList.filter((e,i) => i >= (activePagination - 1) * 5);
+  linkListFiltered = linkListFiltered.filter((e,i) => i < 5);
+
   return (
     <>
       <NavBar />
