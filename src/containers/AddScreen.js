@@ -4,24 +4,36 @@ import '../App.scss';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/NavBar';
 import { Container, Form, Button } from 'react-bootstrap';
+import AlertBasic from '../components/AlertBasic';
 
 function ListScreen () {
   const { addLink } = useContext(LinkContext);
 
   const [name, setName] = useState('');
   const [url, setUrl] = useState('');
+  const [alertShow, setAlertShow] = useState({});
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    addLink(name, url);
-    setName('');
-    setUrl('');
+    if (name !== '' && url !== '') {
+      e.preventDefault();
+      addLink(name, url);
+      setName('');
+      setUrl('');
+      setAlertShow({show: true, type:"success", text: "Link successfully added!"});
+      setTimeout(function () { setAlertShow(false); }, 3000);
+    } else {
+      e.preventDefault();
+      setAlertShow({show: true, type:"danger", text: "Please enter name and url!"});
+      setTimeout(function () { setAlertShow(false); }, 3000);
+    }
   }
 
   return (
     <>
       <Navbar />
       <Container>
+        <AlertBasic show={alertShow.show} type={alertShow.type} text={alertShow.text} onClose={() => setAlertShow(false)} />
+
         <div className="menu">
           <Link to="/" className="btn btn-dark btn-submit">BACK TO LIST</Link>
         </div>
