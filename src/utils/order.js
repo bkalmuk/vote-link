@@ -1,4 +1,3 @@
-
 export function orderByDate(list) {
   // Last added is on top
   return list.sort((a, b) => (a.date < b.date) ? 1 : -1);
@@ -13,4 +12,3 @@ export function orderByVote(list, type) {
     return list.sort((a, b) => (a.vote > b.vote) ? 1 : (a.vote === b.vote) ? ((a.lastVoteDate < b.lastVoteDate) ? 1 : -1) : -1 );
   }
 }
-

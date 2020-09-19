@@ -21,7 +21,7 @@ export const linkReducer = (state, action) => {
     case 'DOWN_VOTE':
       const itemIndexDown = state.findIndex(link => link.id === action.id);
       state[itemIndexDown].vote = state[itemIndexDown].vote - 1;
-      state[itemIndexUp].lastVoteDate = action.lastVoteDate;
+      state[itemIndexDown].lastVoteDate = action.lastVoteDate;
       return [...state]
     default:
       return state
