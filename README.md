@@ -1,6 +1,6 @@
-# Hepsiburada Link Vote Challenge
+# Vote Link
 
-This project is created for Hepsiburada front-end case study.
+A Project that adds link to list and vote them.
 
 ## Prerequisites
 

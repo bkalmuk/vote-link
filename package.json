@@ -1,5 +1,5 @@
 {
-  "name": "hepsiburada-challenge",
+  "name": "vote-link",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -7,6 +7,7 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "bootstrap": "^4.5.2",
+    "enzyme": "^3.11.0",
     "moment": "^2.28.0",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
@@ -37,5 +38,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "enzyme-adapter-react-16": "^1.15.4"
   }
 }

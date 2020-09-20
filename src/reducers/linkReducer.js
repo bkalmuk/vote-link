@@ -1,11 +1,11 @@
-import { v4 as uuidv4 } from 'uuid';
+export const initialState = [];
 
-export const linkReducer = (state, action) => {
+export const linkReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'ADD_LINK':
       return [...state, {
         date: action.link.date,
-        id: uuidv4(),
+        id: action.link.id,
         name: action.link.name,
         url: action.link.url,
         vote: 0,
