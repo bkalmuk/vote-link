@@ -6,7 +6,7 @@ import { Modal, Button } from 'react-bootstrap';
 const ModalBasic = props => {
 
   return (
-    <Modal show={props.show} onHide={props.closeModal}>
+    <Modal show={props.show} onHide={props.closeModal} className="modal-basic">
       <Modal.Header closeButton>
         <Modal.Title>Remove Link</Modal.Title>
       </Modal.Header>

@@ -6,7 +6,7 @@ import { Alert } from 'react-bootstrap';
 const AlertBasic = props => {
   if (props.show) {
     return (
-      <Alert variant={props.type} dismissible onClose={props.onClose}>
+      <Alert className="alert-basic" variant={props.type} dismissible onClose={props.onClose}>
         {props.text}
       </Alert>
     );

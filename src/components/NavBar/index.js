@@ -4,7 +4,7 @@ import { Navbar } from 'react-bootstrap';
 
 const NavBar = () => {
   return (
-    <Navbar bg="dark" variant="dark" style={{ marginBottom: 30 }}>
+    <Navbar bg="dark" variant="dark" style={{ marginBottom: 30 }} className="nav-bar">
       <Navbar.Brand href="#home">
         Vote Link
       </Navbar.Brand>
