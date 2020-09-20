@@ -45,7 +45,7 @@ function ListScreen () {
             <Form.Label>Link Name</Form.Label>
             <Form.Control
               type="text"
-              placeholder="e.g. Hepsiburada"
+              placeholder="e.g. Link"
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
@@ -55,7 +55,7 @@ function ListScreen () {
             <Form.Label>Link URL</Form.Label>
             <Form.Control
               type="text"
-              placeholder="e.g. https://www.hepsiburada.com/"
+              placeholder="e.g. https://www.link.com/"
               value={url}
               onChange={(e) => setUrl(e.target.value)}
             />
