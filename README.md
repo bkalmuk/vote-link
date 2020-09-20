@@ -20,12 +20,20 @@ Now project will run on `http://localhost:3000/`
 
 Directory of the project overall looks like following:
 
-src<br>
-|--components<br>
-|--containers<br>
-|--contexts<br>
-|--reducers<br>
-|--utils<br>
+```shell
+vote-link
+├── src
+│   ├── components          # UI components
+│   ├── containers          # Screen components
+│   ├── contexts            # React Context is used
+│   ├── reducers            # Reducer for managing actions
+│   └── utils               # Helper functions
+├── App.js                  # Application start here
+├── App.scss                # Styling of the app is here
+├── index.js                # Application start here
+└── serviceWorker.js        # Service Integrations
+└── setupTests.js           # Enzyme & Jest Test Integrations
+```
 
 ---
 
