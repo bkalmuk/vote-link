@@ -45,7 +45,6 @@ function ListScreen() {
   if (order !== '') list = orderByVote(list, order); // If it is choosen by dropdown (Most Voted/Less Voted)
 
   // Filtering is for showing only 5 items in the page by the pagination changes
-
   const linkListFiltered = paginationFilter(list, activePagination);
 
   // Remove Item Handling
