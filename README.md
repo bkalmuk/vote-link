@@ -15,6 +15,7 @@ Now project will run on `http://localhost:3000/`
 <img src="./vote-link-image.png" alt="vote-link-image" align="center" />
 
 ---
+
 ## General Structure of the app
 
 Directory of the project overall looks like following:
@@ -43,4 +44,3 @@ src<br>
 - [`enzyme`](https://github.com/airbnb/enzyme)
 
 - [`jest`](https://github.com/facebook/jest)
-
