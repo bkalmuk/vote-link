@@ -9,6 +9,7 @@ import ListItem from '../../components/ListItem';
 import ModalBasic from '../../components/ModalBasic';
 import AlertBasic from '../../components/AlertBasic';
 import { orderByDate, orderByVote } from '../../utils/order';
+import { paginationFilter } from '../../utils/filter';
 import moment from 'moment';
 
 // HOC
@@ -44,8 +45,8 @@ function ListScreen() {
   if (order !== '') list = orderByVote(list, order); // If it is choosen by dropdown (Most Voted/Less Voted)
 
   // Filtering is for showing only 5 items in the page by the pagination changes
-  let linkListFiltered = list.filter((e,i) => i >= (activePagination - 1) * 5);
-  linkListFiltered = linkListFiltered.filter((e,i) => i < 5);
+
+  const linkListFiltered = paginationFilter(list, activePagination);
 
   // Remove Item Handling
   const [itemToRemove, setItemToRemove] = useState({});

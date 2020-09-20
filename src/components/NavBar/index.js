@@ -6,10 +6,10 @@ const NavBar = () => {
   return (
     <Navbar bg="dark" variant="dark" style={{ marginBottom: 30 }}>
       <Navbar.Brand href="#home">
-        hepsiburada
+        Vote Link
       </Navbar.Brand>
       <Navbar.Text className="justify-content-end">
-        Link Vote Challenge
+        Easy to add & vote links
       </Navbar.Text>
     </Navbar>
   );

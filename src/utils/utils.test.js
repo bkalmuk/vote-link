@@ -1,6 +1,7 @@
 import { orderByDate, orderByVote } from './order';
+import { paginationFilter } from './filter';
 
-describe('linkReducer', () => {
+describe('ordering functions', () => {
   let mockList;
 
   beforeEach(() => {
@@ -104,5 +105,44 @@ describe('linkReducer', () => {
       },
     ];
     expect(orderByVote(mockList, 'less')).toEqual(expectedResult);
+  });
+});
+
+describe('pagination filtering function', () => {
+  let mockList;
+
+  beforeEach(() => {
+    mockList = [
+      { name: 'link 7' },
+      { name: 'link 6' },
+      { name: 'link 5' },
+      { name: 'link 4' },
+      { name: 'link 3' },
+      { name: 'link 2' },
+      { name: 'link 1' },
+      { name: 'link 0' },
+    ];
+  });
+
+  it('pagination filtering page 1', () => {
+    const expectedResult = [
+      { name: 'link 7' },
+      { name: 'link 6' },
+      { name: 'link 5' },
+      { name: 'link 4' },
+      { name: 'link 3' },
+    ];
+
+    expect(paginationFilter(mockList, 1)).toEqual(expectedResult);
+  });
+
+  it('pagination filtering page 2', () => {
+    const expectedResult = [
+      { name: 'link 2' },
+      { name: 'link 1' },
+      { name: 'link 0' },
+    ];
+
+    expect(paginationFilter(mockList, 2)).toEqual(expectedResult);
   });
 });
