@@ -1,5 +1,5 @@
 import React from 'react';
-import '../App.scss';
+import '../../App.scss';
 import { DropdownButton, Dropdown } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 

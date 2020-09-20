@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../App.scss';
+import '../../App.scss';
 import { Modal, Button } from 'react-bootstrap';
 
 const ModalBasic = props => {

@@ -1,10 +1,10 @@
 import React, { useContext, useState } from 'react';
-import { LinkContext } from '../contexts/LinkContext';
-import '../App.scss';
+import { LinkContext } from '../../contexts/LinkContext';
+import '../../App.scss';
 import { Link } from 'react-router-dom';
-import Navbar from '../components/NavBar';
+import Navbar from '../../components/NavBar';
 import { Container, Form, Button } from 'react-bootstrap';
-import AlertBasic from '../components/AlertBasic';
+import AlertBasic from '../../components/AlertBasic';
 import moment from 'moment';
 
 function ListScreen () {

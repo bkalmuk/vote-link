@@ -1,14 +1,14 @@
 import React, { useState, useContext } from 'react';
-import { LinkContext } from '../contexts/LinkContext';
-import '../App.scss';
+import { LinkContext } from '../../contexts/LinkContext';
+import '../../App.scss';
 import { Link } from 'react-router-dom';
 import { Container, Pagination } from 'react-bootstrap';
-import NavBar from '../components/NavBar';
-import DropDown from '../components/DropDown';
-import ListItem from '../components/ListItem';
-import ModalBasic from '../components/ModalBasic';
-import AlertBasic from '../components/AlertBasic';
-import { orderByDate, orderByVote } from '../utils/order';
+import NavBar from '../../components/NavBar';
+import DropDown from '../../components/DropDown';
+import ListItem from '../../components/ListItem';
+import ModalBasic from '../../components/ModalBasic';
+import AlertBasic from '../../components/AlertBasic';
+import { orderByDate, orderByVote } from '../../utils/order';
 import moment from 'moment';
 
 // HOC

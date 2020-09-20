@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../App.scss';
+import '../../App.scss';
 import { Row, Col, ButtonGroup, Button } from 'react-bootstrap';
 
 const ListItem = props => {
