@@ -12,6 +12,9 @@ Run the server locally: ```npm start```
 
 Now project will run on `http://localhost:3000/`
 
+<img src="./vote-link-image.png" alt="vote-link-image" align="center" />
+
+---
 ## General Structure of the app
 
 Directory of the project overall looks like following:
@@ -22,6 +25,8 @@ src<br>
 |--contexts<br>
 |--reducers<br>
 |--utils<br>
+
+---
 
 ## Libraries used in the app
 
@@ -39,6 +44,3 @@ src<br>
 
 - [`jest`](https://github.com/facebook/jest)
 
-----
-## [`vote-link.web.app`](https://vote-link.web.app/)
-<img src="../vote-link/vote-link-image.png" alt="LiveUI Banner" align="center" />
